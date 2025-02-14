@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { usePackages } from "../context/PackageContext";
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Row, Col } from "react-bootstrap";
 
 export const AddPackageModal = ({ show, handleClose }) => {
   const { addPackage } = usePackages();
@@ -58,64 +58,73 @@ export const AddPackageModal = ({ show, handleClose }) => {
       </Modal.Header>
       <Modal.Body>
         <Form>
-          <Form.Group className="mb-2">
-            <Form.Control
-              name="sender"
-              placeholder="Sender Name"
-              value={formData.sender}
-              onChange={handleChange}
-              isInvalid={!!errors.sender}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.sender}
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group className="mb-2">
-            <Form.Control
-              name="receiver"
-              placeholder="Receiver Name"
-              value={formData.receiver}
-              onChange={handleChange}
-              isInvalid={!!errors.receiver}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.receiver}
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group className="mb-2">
-            <Form.Control
-              name="source"
-              placeholder="Source Location"
-              value={formData.source}
-              onChange={handleChange}
-              isInvalid={!!errors.source}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.source}
-            </Form.Control.Feedback>
-          </Form.Group>
-
-          <Form.Group className="mb-2">
-            <Form.Control
-              name="destination"
-              placeholder="Destination Location"
-              value={formData.destination}
-              onChange={handleChange}
-              isInvalid={!!errors.destination}
-            />
-            <Form.Control.Feedback type="invalid">
-              {errors.destination}
-            </Form.Control.Feedback>
-          </Form.Group>
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  name="sender"
+                  placeholder="Sender Name"
+                  value={formData.sender}
+                  onChange={handleChange}
+                  isInvalid={!!errors.sender}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.sender}
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  name="receiver"
+                  placeholder="Receiver Name"
+                  value={formData.receiver}
+                  onChange={handleChange}
+                  isInvalid={!!errors.receiver}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.receiver}
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Col>
+          </Row>
+          <Row className="">
+            <Col className="">
+              <Form.Group className="mb-3">
+                <Form.Control
+                  name="source"
+                  placeholder="Source Location"
+                  value={formData.source}
+                  onChange={handleChange}
+                  isInvalid={!!errors.source}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.source}
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Control
+                  name="destination"
+                  placeholder="Destination Location"
+                  value={formData.destination}
+                  onChange={handleChange}
+                  isInvalid={!!errors.destination}
+                />
+                <Form.Control.Feedback type="invalid">
+                  {errors.destination}
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Col>
+          </Row>
         </Form>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-center">
-        <Button variant="success" onClick={handleSubmit}>
+        <Button variant="outline-success modelBtn" onClick={handleSubmit}>
           Save
         </Button>
-        <Button variant="danger" onClick={handleClose}>
+        <Button variant="outline-danger modelBtn" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

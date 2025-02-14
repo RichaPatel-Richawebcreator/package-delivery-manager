@@ -25,10 +25,10 @@ export const UpdateLocationModal = ({ show, handleClose, pkg }) => {
         />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="success" onClick={handleSubmit}>
+        <Button variant="outline-success modelBtn" onClick={handleSubmit}>
           Save
         </Button>
-        <Button variant="danger" onClick={handleClose}>
+        <Button variant="outline-danger modelBtn" onClick={handleClose}>
           Close
         </Button>
       </Modal.Footer>

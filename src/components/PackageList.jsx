@@ -39,13 +39,13 @@ export const PackageList = () => {
         );
       case "Cancelled":
         return (
-          <Badge bg="danger">
+          <Badge pill bg="danger" className="customBadge">
             <FaTimesCircle /> Cancelled
           </Badge>
         );
       default:
         return (
-          <Badge pill bg="secondary">
+          <Badge pill bg="secondary" className="customBadge">
             Unknown
           </Badge>
         );
